@@ -12,6 +12,8 @@
  * Random creation of clouds in the sky.
  */
 AFRAME.registerComponent('clouds', {
+ 
+  //cloud object
   _createCloud() {
     // Create an empty container that will hold the different parts of the cloud.
     const mesh = new THREE.Object3D();
@@ -26,7 +28,7 @@ AFRAME.registerComponent('clouds', {
     });
     
     // Duplicate the geometry a random number of times.
-    const nBlocs = 3+Math.floor(Math.random()*3);
+    const nBlocs = 3+Math.floor(Math.random()*3); // range from [3, 5]
     for (let i=0; i<nBlocs; i++) {
       // Create the mesh by cloning the geometry.
       const m = new THREE.Mesh(geom, mat); 
@@ -39,7 +41,7 @@ AFRAME.registerComponent('clouds', {
       m.rotation.y = Math.random()*Math.PI*2;
       
       // Set the size of the cube randomly.
-      const s = .1 + Math.random()*.9;
+      const s = .1 + Math.random()*.9;  //range [0.1, 0.9]
       m.scale.set(s,s,s);
       
       // Allow each cube to cast and to receive shadows.
