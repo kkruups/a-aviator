@@ -32,7 +32,7 @@ AFRAME.registerComponent('hair', {
     // will be animated).
     this._hairsTop = new THREE.Object3D();
 
-    // Create the hairs at the top of the head and position them on a 3 x 4 grid.
+    // Create the hairs at the top of the head and position them on a 4 x 3 grid.
     for (let i = 0; i < 12; i++) {
       const h = hair.clone();
       const col = i % 3;
